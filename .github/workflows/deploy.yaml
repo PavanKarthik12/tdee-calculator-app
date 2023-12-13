@@ -1,0 +1,15 @@
+name: Workflow to deploy Flask App to S3 Bucket
+on:
+    push:
+        branches:
+            - feature
+    workflow_dispatch:
+jobs:
+    steps:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Code checkout
+              uses: actions/checkout@v3
+            - name: Push an image to docker
+              run: |
+               echo "docker version"
